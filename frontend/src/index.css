@@ -1,0 +1,448 @@
+/* Core Layout Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    padding: 24px;
+}
+
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+.app-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.header-tag {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    padding: 4px 10px;
+    border-radius: 9999px;
+    display: inline-block;
+}
+
+.app-header h1 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 8px;
+}
+
+.app-header p {
+    font-size: 11px;
+    color: rgba(226, 232, 240, 0.7);
+    margin-top: 2px;
+}
+
+.telemetry-status {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+/* Interactive Input Form */
+.input-form {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.form-group input {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #334155;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #4f46e5;
+}
+
+.submit-btn {
+    background: #4f46e5;
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.15s ease;
+}
+
+.submit-btn:hover {
+    background: #4338ca;
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Dashboard Core Grid */
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Weather Cards Row */
+.sensor-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 16px;
+}
+
+.sensor-card {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sensor-card .icon-wrapper {
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.sensor-card p {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.sensor-card h3 {
+    font-size: 16px;
+    font-weight: 900;
+    color: #1e293b;
+}
+
+/* Functional Dashboard Blocks */
+.content-block {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.block-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1e293b;
+}
+
+/* Feed Calculator Inner Area */
+.feed-summary-box {
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .feed-summary-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.feed-main-metric {
+    border-right: 1px solid #e2e8f0;
+    padding-right: 16px;
+}
+
+@media (max-width: 600px) {
+    .feed-main-metric {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 16px;
+        padding-right: 0;
+    }
+}
+
+.feed-summary-box h4 {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+.feed-large-text {
+    font-size: 28px;
+    font-weight: 900;
+    color: #1e293b;
+    margin: 4px 0;
+}
+
+.feed-large-text span {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.feed-sub-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.feed-saved-metric h4 {
+    color: #10b981;
+}
+
+.feed-saved-text {
+    font-size: 24px;
+    font-weight: 900;
+    color: #065f46;
+}
+
+.feed-saved-desc {
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.message-banner {
+    font-size: 12px;
+    font-weight: 500;
+    color: #475569;
+    margin-top: 16px;
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #4f46e5;
+}
+
+/* Risk Grid Blocks */
+.risk-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .risk-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.risk-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.risk-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.risk-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+.risk-card p {
+    font-size: 12px;
+    color: #475569;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.risk-extra-info {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+/* Status Semantic Badges */
+.status-badge {
+    font-size: 9px;
+    font-weight: 900;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+}
+
+.badge-emerald {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.badge-amber {
+    background: #fffbe6;
+    color: #b45309;
+    border: 1px solid #fef3c7;
+}
+
+.badge-rose {
+    background: #fff5f5;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* Icon Semantic Backgrounds */
+.bg-rose-light {
+    background: #fff5f5;
+    color: #e11d48;
+}
+
+.bg-blue-light {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.bg-indigo-light {
+    background: #f5f3ff;
+    color: #4f46e5;
+}
+
+.bg-emerald-light {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+/* Operations Tasks Checklist Block */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.task-item {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    background: rgba(79, 70, 229, 0.02);
+    color: #334155;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    user-select: none;
+    transition: all 0.15s ease;
+}
+
+.task-item:hover {
+    border-color: #a5b4fc;
+}
+
+.task-item.completed {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    opacity: 0.5;
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.checkbox-mock {
+    height: 14px;
+    width: 14px;
+    border: 1px solid #818cf8;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
