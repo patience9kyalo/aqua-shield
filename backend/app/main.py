@@ -12,7 +12,7 @@ app = FastAPI(title="Aqua Shield Weather Backend")
 
 origin = [
     "http://localhost:5173",
-    "http://127.0.1:5173",
+    "https://aqua-shield-drab.vercel.app",
 ]
 
 app.add_middleware(

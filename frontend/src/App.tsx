@@ -42,7 +42,7 @@ export default function App() {
     setError(null);
     setCheckedTasks({});
 
-    fetch(`http://127.0.0.1:8000/api/weather?lat=${lat}&lon=${lon}&base_feed_kg=${baseFeed}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/weather?lat=${lat}&lon=${lon}&base_feed_kg=${baseFeed}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Data pipeline sync error. Status code: ${res.status}`);
         return res.json();
