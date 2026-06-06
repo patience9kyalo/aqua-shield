@@ -50,7 +50,7 @@ venv\Scripts\activate  # On Mac/Linux: source venv/bin/activate
 2. Install dependencies and start the server:
 ```bash
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 
 ```
 
