@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Thermometer, Droplets, Wind, ShieldAlert, Scale, ShieldCheck, AlertTriangle, ClipboardCheck, CheckCircle, Search } from 'lucide-react';
+import { Thermometer, Droplets, Wind, ShieldAlert, Scale, ClipboardCheck, CheckCircle, Search } from 'lucide-react';
 
 // Telemetry Schema Definitions
 interface SubsystemMetric {
@@ -10,6 +10,7 @@ interface SubsystemMetric {
   cumulative_predicted_rainfall_mm?: number;
   action_required?: string;
 }
+
 
 interface WeatherInsights {
   meta: { location_name: string; latitude: number; longitude: number };

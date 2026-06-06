@@ -14,7 +14,9 @@ class WeatherService:
             self.redis_client = redis.Redis(
                 host=config.REDIS_HOST, 
                 port=config.REDIS_PORT, 
-                decode_responses=True
+                password=config.REDIS_PASSWORD,
+                decode_responses=True,
+                ssl=True
             )
             
         self.cache_ttl = 900  # 15 minutes expiration window in seconds
